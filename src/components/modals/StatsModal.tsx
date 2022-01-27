@@ -2,7 +2,7 @@ import Countdown from 'react-countdown'
 import { StatBar } from '../stats/StatBar'
 import { GameStats } from '../../lib/localStorage'
 import { shareStatus } from '../../lib/share'
-import { tomorrow } from '../../lib/words'
+import { tomorrow, doodleSolutions } from '../../lib/words'
 import { BaseModal } from './BaseModal'
 
 type Props = {
@@ -34,8 +34,14 @@ export const StatsModal = ({
   return (
     <BaseModal title="WorDoodle" isOpen={isOpen} handleClose={handleClose}>
       {/* <StatBar gameStats={gameStats} /> */}
-      {/* <h4 className="text-lg leading-6 font-medium text-gray-900">
-      </h4> */}
+        <h4 className="text-lg leading-6 font-medium text-gray-900">
+          My guesses were:
+        </h4>
+        {doodleSolutions.map((doodleSolution) => (
+          <h4 className="text-lg leading-6 font-medium text-gray-900">
+            {doodleSolution}
+          </h4>
+        ))}
       {/* <Histogram gameStats={gameStats} /> */}
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2">
