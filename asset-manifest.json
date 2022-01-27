@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/wordle-doodle/static/css/main.e46e9a6f.css",
+    "main.js": "/wordle-doodle/static/js/main.51d179a6.js",
+    "static/js/787.e8fba212.chunk.js": "/wordle-doodle/static/js/787.e8fba212.chunk.js",
+    "static/media/wordoodle221.jpg": "/wordle-doodle/static/media/wordoodle221.4bc4ecb96dff0572125d.jpg",
+    "index.html": "/wordle-doodle/index.html",
+    "main.e46e9a6f.css.map": "/wordle-doodle/static/css/main.e46e9a6f.css.map",
+    "main.51d179a6.js.map": "/wordle-doodle/static/js/main.51d179a6.js.map",
+    "787.e8fba212.chunk.js.map": "/wordle-doodle/static/js/787.e8fba212.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e46e9a6f.css",
+    "static/js/main.51d179a6.js"
+  ]
+}
