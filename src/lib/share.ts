@@ -35,10 +35,10 @@ export const getPointsFor = (guesses: string[]) => {
   let got = 0
   let total = 0
   guesses
-    .map((guess, i) => {
+    .forEach((guess, i) => {
     const theirStatus = getGuessStatuses(guess, doodleSolutions[i])
     const myStatus = getGuessStatuses(doodleSolutions[i], doodleSolution)
-    myStatus.map((status, j) => {
+    myStatus.forEach((status, j) => {
       if (status === 'absent') {
         total+=1
         if (theirStatus[j] === 'correct') {

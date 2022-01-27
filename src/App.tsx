@@ -126,7 +126,7 @@ function App() {
         />
       </div>
       <div className="flex w-80 mx-auto items-center mb-8">
-        <img src={wordoodle} height={5} />
+        <img src={wordoodle} alt="Doodle" />
       </div>
       <Grid guesses={guesses} currentGuess={currentGuess} />
       <Keyboard
