@@ -10,8 +10,8 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500">
-        Guess the WORDLE in 6 tries. After each guess, the color of the tiles
-        will change to show how close your guess was to the word.
+        I'm learning how to draw, but I already learned how to code!
+        Guess the guesses I guessed for WORDLE based off the doodle where I incorporated each of my guesses. You get more points the more accurate your guess is to my guess. 
       </p>
 
       <div className="flex justify-center mb-1 mt-4">

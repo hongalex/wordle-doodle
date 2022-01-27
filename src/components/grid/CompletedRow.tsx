@@ -1,12 +1,14 @@
 import { getGuessStatuses } from '../../lib/statuses'
 import { Cell } from './Cell'
+import { doodleSolutions } from '../../lib/words'
 
 type Props = {
+  rowIndex: number
   guess: string
 }
 
-export const CompletedRow = ({ guess }: Props) => {
-  const statuses = getGuessStatuses(guess)
+export const CompletedRow = ({ rowIndex, guess }: Props) => {
+  const statuses = getGuessStatuses(guess, doodleSolutions[rowIndex])
 
   return (
     <div className="flex justify-center mb-1">

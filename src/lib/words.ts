@@ -12,6 +12,10 @@ export const isWinningWord = (word: string) => {
   return solution === word
 }
 
+export const isWinningDoodleWord = (word: string) => {
+  return doodleSolution === word
+}
+
 export const getWordOfDay = () => {
   // January 1, 2022 Game Epoch
   const epochMs = 1641013200000
@@ -25,6 +29,12 @@ export const getWordOfDay = () => {
     solutionIndex: index,
     tomorrow: nextday,
   }
+}
+
+export const { doodleSolution, doodleSolutions, doodleSolutionIndex } = { 
+  doodleSolution: "WHACK",
+  doodleSolutions: ["WOMAN", "WRATH", "WHALE", "WHACK"], 
+  doodleSolutionIndex: 221,
 }
 
 export const { solution, solutionIndex, tomorrow } = getWordOfDay()

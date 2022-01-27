@@ -27,18 +27,17 @@ export const StatsModal = ({
 }: Props) => {
   if (gameStats.totalGames <= 0) {
     return (
-      <BaseModal title="Statistics" isOpen={isOpen} handleClose={handleClose}>
+      <BaseModal title="WorDoodle" isOpen={isOpen} handleClose={handleClose}>
         <StatBar gameStats={gameStats} />
       </BaseModal>
     )
   }
   return (
-    <BaseModal title="Statistics" isOpen={isOpen} handleClose={handleClose}>
-      <StatBar gameStats={gameStats} />
-      <h4 className="text-lg leading-6 font-medium text-gray-900">
-        Guess Distribution
-      </h4>
-      <Histogram gameStats={gameStats} />
+    <BaseModal title="WorDoodle" isOpen={isOpen} handleClose={handleClose}>
+      {/* <StatBar gameStats={gameStats} /> */}
+      {/* <h4 className="text-lg leading-6 font-medium text-gray-900">
+      </h4> */}
+      {/* <Histogram gameStats={gameStats} /> */}
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2">
           <div>

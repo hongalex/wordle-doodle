@@ -18,6 +18,8 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
       onEnter()
     } else if (value === 'DELETE') {
       onDelete()
+    // } else if (value === '↓') {
+    // } else if (value === '↑') {
     } else {
       onChar(value)
     }
@@ -67,7 +69,7 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
         <Key value="K" onClick={onClick} status={charStatuses['K']} />
         <Key value="L" onClick={onClick} status={charStatuses['L']} />
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-1">
         <Key width={65.4} value="ENTER" onClick={onClick}>
           Enter
         </Key>
@@ -82,6 +84,14 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
           Delete
         </Key>
       </div>
+      {/* <div className="flex justify-center">
+        <Key width={65.4} value="↑" onClick={onClick}>
+          ↑
+        </Key>
+        <Key width={65.4} value="↓" onClick={onClick}>
+          ↓
+        </Key>
+      </div> */}
     </div>
   )
 }

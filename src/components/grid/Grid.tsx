@@ -14,11 +14,11 @@ export const Grid = ({ guesses, currentGuess }: Props) => {
   return (
     <div className="pb-6">
       {guesses.map((guess, i) => (
-        <CompletedRow key={i} guess={guess} />
+        <CompletedRow key={i} guess={guess} rowIndex={i} />
       ))}
-      {guesses.length < 6 && <CurrentRow guess={currentGuess} />}
+      {guesses.length < 6 && <CurrentRow guess={currentGuess} rowIndex={guesses.length} />}
       {empties.map((_, i) => (
-        <EmptyRow key={i} />
+        <EmptyRow key={i} rowIndex={i+guesses.length+1} />
       ))}
     </div>
   )

@@ -1,17 +1,19 @@
 import { getGuessStatuses } from './statuses'
-import { solutionIndex } from './words'
+import { doodleSolution, doodleSolutions, doodleSolutionIndex } from './words'
 
 export const shareStatus = (guesses: string[], lost: boolean) => {
+  const {got, total} = getPointsFor(guesses)
+
   navigator.clipboard.writeText(
-    `Not Wordle ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n` +
+    `WorDoodle ${doodleSolutionIndex} ${lost ? 'X' : got}/${total}\n\n` +
       generateEmojiGrid(guesses)
   )
 }
 
 export const generateEmojiGrid = (guesses: string[]) => {
   return guesses
-    .map((guess) => {
-      const status = getGuessStatuses(guess)
+    .map((guess, i) => {
+      const status = getGuessStatuses(guess, doodleSolutions[i])
       return guess
         .split('')
         .map((letter, i) => {
@@ -27,4 +29,33 @@ export const generateEmojiGrid = (guesses: string[]) => {
         .join('')
     })
     .join('\n')
+}
+
+export const getPointsFor = (guesses: string[]) => {
+  let got = 0
+  let total = 0
+  guesses
+    .map((guess, i) => {
+    const theirStatus = getGuessStatuses(guess, doodleSolutions[i])
+    const myStatus = getGuessStatuses(doodleSolutions[i], doodleSolution)
+    myStatus.map((status, j) => {
+      if (status === 'absent') {
+        total+=1
+        if (theirStatus[j] === 'correct') {
+          got+=1
+        }
+      }
+      if (status === 'present') {
+        total+=0.5
+        if (theirStatus[j] === 'correct') {
+          got+=0.5
+        }
+      }
+    })
+  })
+
+  return {
+    got: got,
+    total: total,
+  }
 }
