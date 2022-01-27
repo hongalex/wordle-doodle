@@ -8,7 +8,12 @@ import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { WIN_MESSAGES } from './constants/strings'
-import { isWordInWordList, isWinningDoodleWord, solution } from './lib/words'
+import {
+  isWordInWordList,
+  isWinningDoodleWord,
+  solution,
+  doodleSolution,
+} from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
   loadGameStateFromLocalStorage,
@@ -30,10 +35,10 @@ function App() {
   const [successAlert, setSuccessAlert] = useState('')
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
-    if (loaded?.solution !== solution) {
+    if (loaded?.doodleSolution !== doodleSolution) {
       return []
     }
-    const gameWasWon = loaded.guesses.includes(solution)
+    const gameWasWon = loaded.guesses.includes(doodleSolution)
     if (gameWasWon) {
       setIsGameWon(true)
     }
@@ -46,7 +51,7 @@ function App() {
   const [stats, setStats] = useState(() => loadStats())
 
   useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution })
+    saveGameStateToLocalStorage({ guesses, doodleSolution })
   }, [guesses])
 
   useEffect(() => {
