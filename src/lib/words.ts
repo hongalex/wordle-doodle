@@ -31,9 +31,9 @@ export const getWordOfDay = () => {
   }
 }
 
-export const { doodleSolution, doodleSolutions, doodleSolutionIndex } = { 
-  doodleSolution: "WHACK",
-  doodleSolutions: ["WOMAN", "WRATH", "WHALE", "WHACK"], 
+export const { doodleSolution, doodleSolutions, doodleSolutionIndex } = {
+  doodleSolution: 'WHACK',
+  doodleSolutions: ['WOMAN', 'WRATH', 'WHALE', 'WHACK'],
   doodleSolutionIndex: 221,
 }
 

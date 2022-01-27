@@ -18,8 +18,8 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
       onEnter()
     } else if (value === 'DELETE') {
       onDelete()
-    // } else if (value === '↓') {
-    // } else if (value === '↑') {
+      // } else if (value === '↓') {
+      // } else if (value === '↑') {
     } else {
       onChar(value)
     }

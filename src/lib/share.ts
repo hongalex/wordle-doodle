@@ -2,7 +2,7 @@ import { getGuessStatuses } from './statuses'
 import { doodleSolution, doodleSolutions, doodleSolutionIndex } from './words'
 
 export const shareStatus = (guesses: string[], lost: boolean) => {
-  const {got, total} = getPointsFor(guesses)
+  const { got, total } = getPointsFor(guesses)
 
   navigator.clipboard.writeText(
     `WorDoodle ${doodleSolutionIndex} ${lost ? 'X' : got}/${total}\n\n` +
@@ -34,21 +34,20 @@ export const generateEmojiGrid = (guesses: string[]) => {
 export const getPointsFor = (guesses: string[]) => {
   let got = 0
   let total = 0
-  guesses
-    .forEach((guess, i) => {
+  guesses.forEach((guess, i) => {
     const theirStatus = getGuessStatuses(guess, doodleSolutions[i])
     const myStatus = getGuessStatuses(doodleSolutions[i], doodleSolution)
     myStatus.forEach((status, j) => {
       if (status === 'absent') {
-        total+=1
+        total += 1
         if (theirStatus[j] === 'correct') {
-          got+=1
+          got += 1
         }
       }
       if (status === 'present') {
-        total+=0.5
+        total += 0.5
         if (theirStatus[j] === 'correct') {
-          got+=0.5
+          got += 0.5
         }
       }
     })

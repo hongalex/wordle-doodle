@@ -19,7 +19,7 @@ export const CurrentRow = ({ rowIndex, guess }: Props) => {
           <Cell key={i} value={letter} status={statuses[i]} />
         ))}
         {emptyCells.map((_, i) => (
-          <Cell key={i} status={statuses[i+splitGuess.length]} />
+          <Cell key={i} status={statuses[i + splitGuess.length]} />
         ))}
       </div>
     )
@@ -35,5 +35,4 @@ export const CurrentRow = ({ rowIndex, guess }: Props) => {
       </div>
     )
   }
-
 }
