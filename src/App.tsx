@@ -19,7 +19,7 @@ import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
-import wordoodle from './wordoodle222.jpg'
+import wordoodle from './wordoodle223.jpg'
 
 const ALERT_TIME_MS = 2000
 

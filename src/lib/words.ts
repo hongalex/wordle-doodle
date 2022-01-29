@@ -32,9 +32,9 @@ export const getWordOfDay = () => {
 }
 
 export const { doodleSolution, doodleSolutions, doodleSolutionIndex } = {
-  doodleSolution: 'MOUNT',
-  doodleSolutions: ['GHOST', 'TAROT', 'COMET', 'MOUNT'],
-  doodleSolutionIndex: 222,
+  doodleSolution: 'PERKY',
+  doodleSolutions: ['ROGUE', 'STERN', 'LAYER', 'MERCY', 'JERKY', 'PERKY'],
+  doodleSolutionIndex: 223,
 }
 
 export const { solution, solutionIndex, tomorrow } = getWordOfDay()

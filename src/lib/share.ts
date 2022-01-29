@@ -45,9 +45,9 @@ export const getPointsFor = (guesses: string[]) => {
         }
       }
       if (status === 'present') {
-        total += 0.5
+        total += 1
         if (theirStatus[j] === 'correct') {
-          got += 0.5
+          got += 1
         }
       }
     })
